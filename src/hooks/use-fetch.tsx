@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-export const useFetch = (url: string) => {
-  const [data, setData] = useState(null);
+export const useFetch = <T,>(url: string) => {
+  const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
@@ -16,7 +16,9 @@ export const useFetch = (url: string) => {
         next: { revalidate: 60 },
       });
 
-      setData(await response.json());
+      const jsonData = (await response.json()) as T;
+
+      setData(jsonData);
     } catch (error: unknown) {
       setError(
         error instanceof Error ? error : new Error("An unknown error occurred")
@@ -28,7 +30,7 @@ export const useFetch = (url: string) => {
 
   useEffect(() => {
     fetchData(url);
-  }, []);
+  }, [url]);
 
   return { loading, error, data };
 };

@@ -2,7 +2,6 @@ export const TRIVIA_API_URL = "https://opentdb.com/api.php?amount=10";
 export const CATEGORY_TRIVIA_API_URL = "https://opentdb.com/api_category.php";
 
 export const CATEGORY_LIST = [
-  "any",
   "general knowledge",
   "mythology",
   "sports",
@@ -14,4 +13,4 @@ export const CATEGORY_LIST = [
   "vehicles",
 ];
 
-export const DIFFICULTY_LIST = ["any", "easy", "medium", "hard"];
+export const DIFFICULTY_LIST = ["easy", "medium", "hard"];

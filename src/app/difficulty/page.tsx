@@ -19,7 +19,7 @@ const DifficultyPage = () => {
             label={value}
             key={value}
             onClick={() =>
-              router.push(`/?category=${cateogry}&difficulty=${value}`)
+              router.push(`/question?category=${cateogry}&difficulty=${value}`)
             }
           />
         ))}
