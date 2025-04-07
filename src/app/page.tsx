@@ -10,8 +10,14 @@ export default function Page() {
 
   return (
     <Container>
-      <p className="text-3xl text-black font-bold">Quiz Quest</p>
-      <Button label="Play" onClick={() => router.push("/category")} />
+      <div className="mb-8">
+        <p className="text-3xl text-black font-bold">Quiz Quest</p>
+      </div>
+      <Button
+        label="Play"
+        onClick={() => router.push("/category")}
+        styles="w-[200px]"
+      />
     </Container>
   );
 }
