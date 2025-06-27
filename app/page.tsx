@@ -1,17 +1,17 @@
-import { AppLayout } from "@/components/layout/app-layout";
-import Hero from "@/components/hero";
-import About from "@/components/about";
-import TechStack from "@/components/tech-stack";
-import React from "react";
+import AboutMe from './_components/AboutMe';
+import Banner from './_components/Banner';
+import Experiences from './_components/Experiences';
+import Skills from './_components/Skills';
+import ProjectList from './_components/ProjectList';
 
 export default function Home() {
-  return (
-    <AppLayout>
-      <Hero />
-      <About />
-      <div className="mt-40">
-        <TechStack />
-      </div>
-    </AppLayout>
-  );
+    return (
+        <div className="page-">
+            <Banner />
+            <AboutMe />
+            <Skills />
+            <Experiences />
+            <ProjectList />
+        </div>
+    );
 }
