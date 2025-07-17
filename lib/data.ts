@@ -159,8 +159,8 @@ export const PROJECTS: IProject[] = [
   //   ],
   // },
   {
-    title: "AI Interview",
-    slug: "ai-interview",
+    title: "Prepwise",
+    slug: "prepwise",
     techStack: [
       "Next.js",
       "Google Gemini API",
@@ -183,6 +183,32 @@ export const PROJECTS: IProject[] = [
     description:
       "I developed AI Interview, a platform that allows users to practice mock interviews with AI-powered feedback. The platform uses Google Gemini API to generate interview questions and provide feedback on the user's performance.",
     role: ``,
+    platform: "website",
+  },
+  {
+    title: "Aora",
+    slug: "aora",
+    techStack: ["React Native", "Firebase", "Nativewind", "Zustand"],
+    thumbnail: "/projects/thumbnail/aora.png",
+    longThumbnail: "/projects/long/aora.png",
+    images: [
+      "/projects/images/aora-1.png",
+      "/projects/images/aora-2.png",
+      "/projects/images/aora-3.png",
+      "/projects/images/aora-4.png",
+      "/projects/images/aora-5.png",
+      "/projects/images/aora-6.png",
+      "/projects/images/aora-7.png",
+      "/projects/images/aora-8.png",
+      "/projects/images/aora-9.png",
+    ],
+    sourceCode: "https://github.com/Lampzzz/video-blogs-app",
+    liveUrl: "",
+    year: 2025,
+    description:
+      "Aora is a mobile video blogging platform where users can create, save, and share their own video blog posts. It also allows users to explore and watch content shared by others, fostering a creative and engaging community for visual storytelling.",
+    role: ``,
+    platform: "mobile",
   },
 ];
 
