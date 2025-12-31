@@ -46,7 +46,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className={`card p-8 flex flex-col ${
+              className={`bg-white rounded-2xl p-8 flex flex-col shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08),0_16px_40px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1 ${
                 index === 1 ? "md:-mt-4" : ""
               }`}
             >

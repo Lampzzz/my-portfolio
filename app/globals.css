@@ -4,7 +4,7 @@
 :root {
   /* Colors - Clean black and white palette */
   --color-bg: #FFFFFF;
-  --color-bg-alt: #F5F5F5;
+  --color-bg-alt: #F5F5F5; /* Light gray */
   --color-surface: #FFFFFF;
   --color-text: #000000;
   --color-text-muted: #525252;
@@ -207,12 +207,14 @@ body {
 
 /* Hover Effects */
 .hover-lift {
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 
+              0 24px 48px rgba(0, 0, 0, 0.15);
 }
 
 /* Image Hover Zoom */
@@ -221,11 +223,58 @@ body {
 }
 
 .img-zoom img {
-  transition: transform var(--transition-slow);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .img-zoom:hover img {
   transform: scale(1.05);
+}
+
+/* Project Card Enhanced */
+.project-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.01),
+    0 2px 2px rgba(0, 0, 0, 0.01),
+    0 4px 4px rgba(0, 0, 0, 0.02),
+    0 8px 8px rgba(0, 0, 0, 0.02),
+    0 16px 16px rgba(0, 0, 0, 0.02);
+  transition: 
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover {
+  box-shadow: 
+    0 2px 2px rgba(0, 0, 0, 0.02),
+    0 4px 4px rgba(0, 0, 0, 0.03),
+    0 8px 8px rgba(0, 0, 0, 0.04),
+    0 16px 16px rgba(0, 0, 0, 0.05),
+    0 32px 32px rgba(0, 0, 0, 0.06),
+    0 48px 48px rgba(0, 0, 0, 0.06);
+  transform: translateY(-10px);
+}
+
+.project-card .project-image {
+  overflow: hidden;
+}
+
+.project-card img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card .project-content {
+  transition: background-color 0.4s ease;
+}
+
+.project-card:hover .project-content {
+  background-color: var(--color-bg-alt);
 }
 
 /* Link Underline Animation */
@@ -255,28 +304,36 @@ body {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--text-sm);
-  letter-spacing: 0.01em;
-  border-radius: var(--radius-lg);
-  transition: all var(--transition-base);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-radius: 9999px;
   cursor: pointer;
   border: none;
+  transition: all 0.3s ease;
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Primary Button */
 .btn-primary {
   background: var(--color-text);
   color: var(--color-bg);
 }
 
 .btn-primary:hover {
-  background: var(--color-accent);
+  background: #333;
 }
 
+/* Secondary Button */
 .btn-secondary {
   background: transparent;
   color: var(--color-text);
-  border: 1px solid var(--color-border);
+  border: 1.5px solid var(--color-border);
 }
 
 .btn-secondary:hover {
@@ -310,15 +367,19 @@ input::placeholder, textarea::placeholder {
 /* Card Base */
 .card {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 
+              0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .card:hover {
-  border-color: var(--color-border-hover);
-  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 
+              0 16px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
 
 /* Section Spacing */
@@ -436,4 +497,27 @@ input::placeholder, textarea::placeholder {
 .scroll-container:hover .animate-scroll-up,
 .scroll-container:hover .animate-scroll-down {
   animation-play-state: paused;
+}
+
+/* Slider Image Card */
+.slider-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    0 2px 4px rgba(0, 0, 0, 0.02),
+    0 4px 8px rgba(0, 0, 0, 0.03),
+    0 8px 16px rgba(0, 0, 0, 0.04);
+  transition: 
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slider-card:hover {
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 16px 32px rgba(0, 0, 0, 0.08);
 }

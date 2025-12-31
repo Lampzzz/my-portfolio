@@ -25,7 +25,7 @@ const projects = [
     description:
       "Created a reusable UI component library with Storybook documentation, accessibility compliance, and theming support.",
     tags: ["React", "Storybook", "A11y"],
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop&q=80",
     link: "#",
     featured: false,
   },
@@ -35,7 +35,7 @@ const projects = [
     description:
       "Built a performant chat application with WebSocket integration, optimistic updates, and offline support.",
     tags: ["Next.js", "Socket.io", "Zustand"],
-    image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=400&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=600&h=400&fit=crop&q=80",
     link: "#",
     featured: false,
   },
@@ -55,7 +55,7 @@ export default function Projects() {
           </div>
           <a
             href="#"
-            className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors text-sm font-medium link-underline self-start sm:self-auto"
+            className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-300 text-sm font-medium link-underline self-start sm:self-auto"
           >
             View all projects →
           </a>
@@ -67,38 +67,36 @@ export default function Projects() {
           <div className="grid md:grid-cols-2 gap-8">
             {projects
               .filter((p) => p.featured)
-              .map((project, index) => (
+              .map((project) => (
                 <a
                   key={project.id}
                   href={project.link}
-                  className="group card hover-lift"
+                  className="group project-card block"
                 >
                   {/* Project Image */}
-                  <div className="aspect-[4/3] bg-[var(--color-bg-alt)] relative overflow-hidden img-zoom">
+                  <div className="project-image aspect-[4/3] bg-[var(--color-bg-alt)] relative overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-[var(--color-text)]/0 group-hover:bg-[var(--color-text)]/5 transition-colors duration-300" />
                   </div>
 
                   {/* Project Info */}
-                  <div className="p-6 md:p-8">
+                  <div className="project-content p-6 md:p-8 transition-colors duration-500">
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-3 mb-4">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-xs text-[var(--color-text-subtle)] font-medium"
+                          className="text-xs text-[var(--color-text-subtle)] font-medium tracking-wide"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <h3 className="text-xl md:text-2xl font-semibold mb-3 group-hover:text-[var(--color-accent)] transition-colors">
+                    <h3 className="text-xl md:text-2xl font-bold mb-3 transition-colors duration-300">
                       {project.title}
                     </h3>
 
@@ -107,10 +105,10 @@ export default function Projects() {
                     </p>
 
                     {/* View Project Link */}
-                    <div className="mt-6 flex items-center gap-2 text-sm font-medium text-[var(--color-text)]">
+                    <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[var(--color-text)]">
                       <span>View Project</span>
                       <svg
-                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                        className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -129,17 +127,17 @@ export default function Projects() {
           </div>
 
           {/* Other Projects - Smaller Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-8">
             {projects
               .filter((p) => !p.featured)
               .map((project) => (
                 <a
                   key={project.id}
                   href={project.link}
-                  className="group card hover-lift flex flex-col sm:flex-row"
+                  className="group project-card flex flex-col sm:flex-row"
                 >
                   {/* Project Image */}
-                  <div className="sm:w-48 md:w-56 shrink-0 aspect-[4/3] sm:aspect-square bg-[var(--color-bg-alt)] relative overflow-hidden img-zoom">
+                  <div className="project-image sm:w-48 md:w-56 shrink-0 aspect-[16/10] sm:aspect-[4/3] bg-[var(--color-bg-alt)] relative overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -148,25 +146,43 @@ export default function Projects() {
                   </div>
 
                   {/* Project Info */}
-                  <div className="p-6 flex flex-col justify-center">
-                    <div className="flex flex-wrap gap-2 mb-2">
+                  <div className="project-content p-6 flex flex-col justify-center transition-colors duration-500">
+                    <div className="flex flex-wrap gap-2 mb-3">
                       {project.tags.slice(0, 2).map((tag) => (
                         <span
                           key={tag}
-                          className="text-xs text-[var(--color-text-subtle)] font-medium"
+                          className="text-xs text-[var(--color-text-subtle)] font-medium tracking-wide"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <h3 className="text-lg font-semibold mb-2 group-hover:text-[var(--color-accent)] transition-colors">
+                    <h3 className="text-lg font-bold mb-2 transition-colors duration-300">
                       {project.title}
                     </h3>
 
-                    <p className="text-sm text-[var(--color-text-muted)] line-clamp-2">
+                    <p className="text-sm text-[var(--color-text-muted)] line-clamp-2 leading-relaxed">
                       {project.description}
                     </p>
+
+                    {/* Arrow indicator */}
+                    <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[var(--color-text)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span>View</span>
+                      <svg
+                        className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </a>
               ))}
@@ -176,4 +192,3 @@ export default function Projects() {
     </section>
   );
 }
-

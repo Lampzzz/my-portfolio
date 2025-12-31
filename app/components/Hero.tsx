@@ -59,18 +59,8 @@ export default function Hero() {
             <div className="animate-on-load animate-fade-in-up delay-300 mt-10 flex flex-wrap gap-4">
               <a href="#contact" className="btn btn-primary">
                 Book a Call
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
               <a href="#work" className="btn btn-secondary">
@@ -125,7 +115,7 @@ export default function Hero() {
                 {[...scrollImages[0], ...scrollImages[0]].map((src, i) => (
                   <div
                     key={i}
-                    className="w-full rounded-lg overflow-hidden shadow-md border border-[var(--color-border)] bg-white"
+                    className="w-full slider-card"
                   >
                     <img
                       src={src}
@@ -143,7 +133,7 @@ export default function Hero() {
                 {[...scrollImages[1], ...scrollImages[1]].map((src, i) => (
                   <div
                     key={i}
-                    className="w-full rounded-lg overflow-hidden shadow-md border border-[var(--color-border)] bg-white"
+                    className="w-full slider-card"
                   >
                     <img
                       src={src}
@@ -161,7 +151,7 @@ export default function Hero() {
                 {[...scrollImages[2], ...scrollImages[2]].map((src, i) => (
                   <div
                     key={i}
-                    className="w-full rounded-lg overflow-hidden shadow-md border border-[var(--color-border)] bg-white"
+                    className="w-full slider-card"
                   >
                     <img
                       src={src}
