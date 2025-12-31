@@ -277,6 +277,31 @@ body {
   background-color: var(--color-bg-alt);
 }
 
+/* Project Image Tilt Effect */
+.project-image-tilt {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.project-image-tilt:hover {
+  transform: perspective(800px) rotateY(-8deg) rotateX(8deg) translateY(-8px);
+  box-shadow: 
+    25px 25px 50px rgba(0, 0, 0, 0.15),
+    -10px -10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.project-image-tilt > div img,
+.project-image-tilt img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-image-tilt:hover > div img,
+.project-image-tilt:hover img {
+  transform: scale(1.08);
+}
+
 /* Link Underline Animation */
 .link-underline {
   position: relative;

@@ -220,7 +220,7 @@ export default function Projects() {
               <div
                 className={`relative ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
               >
-                <div className="relative bg-[var(--color-bg)] rounded-2xl p-6 shadow-lg">
+                <div className="project-image-tilt relative bg-[var(--color-bg)] rounded-2xl p-6 shadow-lg">
                   {/* Main Image */}
                   <div className="rounded-xl overflow-hidden shadow-md">
                     <img
