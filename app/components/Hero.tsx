@@ -60,44 +60,6 @@ export default function Hero() {
                 Sample Works
               </a>
             </div>
-
-            {/* Quick Stats */}
-            <div className="animate-on-load animate-fade-in-up delay-400 mt-12 pt-8 border-t border-[var(--color-border)]">
-              <div className="grid grid-cols-4 gap-6">
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-[var(--color-text)]">
-                    5+
-                  </div>
-                  <div className="text-xs text-[var(--color-text-muted)] mt-1">
-                    Years Exp.
-                  </div>
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-[var(--color-text)]">
-                    50+
-                  </div>
-                  <div className="text-xs text-[var(--color-text-muted)] mt-1">
-                    Projects
-                  </div>
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-[var(--color-text)]">
-                    30+
-                  </div>
-                  <div className="text-xs text-[var(--color-text-muted)] mt-1">
-                    Clients
-                  </div>
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-[var(--color-text)]">
-                    100%
-                  </div>
-                  <div className="text-xs text-[var(--color-text-muted)] mt-1">
-                    Satisfaction
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right - Infinite Scrolling Images (2 columns) */}
