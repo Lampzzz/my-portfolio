@@ -16,7 +16,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Frontend Developer",
+  title: "John Doe",
   description: "Frontend developer specializing in React, Next.js, and TypeScript. Building performant, accessible, and beautiful web applications.",
   keywords: ["frontend developer", "React", "Next.js", "TypeScript", "web development", "portfolio"],
   authors: [{ name: "Your Name" }],
