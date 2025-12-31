@@ -4,7 +4,7 @@
 :root {
   /* Colors - Clean black and white palette */
   --color-bg: #FFFFFF;
-  --color-bg-alt: #F5F5F5; /* Light gray */
+  --color-bg-alt: #FCFCFC; /* Ultra light gray, almost white */
   --color-surface: #FFFFFF;
   --color-text: #000000;
   --color-text-muted: #525252;
@@ -48,7 +48,7 @@
 @theme inline {
   --color-background: var(--color-bg);
   --color-foreground: var(--color-text);
-  --font-sans: var(--font-dm-sans);
+  --font-sans: var(--font-inter);
   --font-serif: var(--font-source-serif);
 }
 
@@ -390,9 +390,29 @@ input::placeholder, textarea::placeholder {
 /* Container */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+/* Hero Container - Wider layout like reference */
+.container-hero {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-hero {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-hero {
+    padding: 0 3rem;
+  }
 }
 
 @media (min-width: 768px) {
