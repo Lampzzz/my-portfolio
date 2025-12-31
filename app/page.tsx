@@ -1,17 +1,23 @@
-import AboutMe from "./_components/AboutMe";
-import Banner from "./_components/Banner";
-import Experiences from "./_components/Experiences";
-import Skills from "./_components/Skills";
-import ProjectList from "./_components/ProjectList";
+import Navigation from "./components/Navigation";
+import Hero from "./components/Hero";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import Testimonials from "./components/Testimonials";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="page-">
-      <Banner />
-      <AboutMe />
-      <Skills />
-      <Experiences />
-      <ProjectList />
-    </div>
+    <>
+      <Navigation />
+      <main>
+        <Hero />
+        <Projects />
+        <About />
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
