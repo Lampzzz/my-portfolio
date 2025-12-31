@@ -28,9 +28,9 @@ export default function Contact() {
   return (
     <section id="contact" className="section">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid lg:grid-cols-9 gap-16 lg:gap-24">
           {/* Left Column - Info */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:col-span-4">
             <div>
               <span className="badge mb-4">Get in Touch</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight uppercase">
@@ -130,7 +130,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column - Form */}
-          <div className="bg-white rounded-2xl p-8 md:p-10 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.06)]">
+          <div className="lg:col-span-5 bg-white rounded-2xl p-8 md:p-10 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.06)]">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
