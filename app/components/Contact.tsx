@@ -38,7 +38,7 @@ export default function Contact() {
           </h2>
               <p className="mt-6 text-[var(--color-text-muted)] leading-relaxed max-w-md">
                 Have a project in mind? I'd love to hear about it. Fill out the
-                form and I'll get back to you within 24-48 hours.
+                form and I'll get back to you as soon as possible.
               </p>
             </div>
 
