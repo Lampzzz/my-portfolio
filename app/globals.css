@@ -387,10 +387,10 @@ input::placeholder, textarea::placeholder {
   padding: var(--space-section) 0;
 }
 
-/* Container */
+/* Container - Narrower for content sections */
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 992px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
