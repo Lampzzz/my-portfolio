@@ -359,6 +359,7 @@ body {
   background: transparent;
   color: var(--color-text);
   border: 1.5px solid var(--color-border);
+  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
