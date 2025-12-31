@@ -17,13 +17,13 @@ const scrollImages = [
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center pt-32 pb-16 relative overflow-hidden">
-      <div className="container-hero relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+    <section className="h-screen flex items-center pt-24 pb-8 relative overflow-hidden">
+      <div className="container-hero relative h-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-6 items-center h-full">
           {/* Left Content */}
-          <div className="max-w-2xl mx-auto lg:mx-0 lg:max-w-none">
+          <div className="max-w-2xl mx-auto lg:mx-0 lg:max-w-none flex flex-col justify-center">
             {/* Status Badge */}
-            <div className="animate-on-load animate-fade-in-up mb-8">
+            <div className="animate-on-load animate-fade-in-up mb-6">
               <span className="status-available">
                 Available for new projects
               </span>
@@ -31,25 +31,25 @@ export default function Hero() {
 
             {/* Main Headline */}
             <h1 className="animate-on-load animate-fade-in-up delay-100">
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] uppercase">
+              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-tight leading-[1.05] uppercase">
                 Building Modern
               </span>
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] uppercase">
+              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-tight leading-[1.05] uppercase">
                 Web Interfaces
               </span>
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-[var(--color-text-muted)]">
+              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-tight leading-[1.05] uppercase text-[var(--color-text-muted)]">
                 That Scale
               </span>
             </h1>
 
             {/* Subheadline */}
-            <p className="animate-on-load animate-fade-in-up delay-200 mt-8 text-lg text-[var(--color-text-muted)] max-w-md leading-relaxed">
+            <p className="animate-on-load animate-fade-in-up delay-200 mt-6 text-base lg:text-lg text-[var(--color-text-muted)] max-w-md leading-relaxed">
               Frontend developer specializing in React, Next.js, and TypeScript. 
               I craft performant, accessible, and pixel-perfect interfaces.
             </p>
 
             {/* CTA Buttons */}
-            <div className="animate-on-load animate-fade-in-up delay-300 mt-10 flex flex-wrap gap-4">
+            <div className="animate-on-load animate-fade-in-up delay-300 mt-8 flex flex-wrap gap-4">
               <a href="#contact" className="btn btn-primary">
                 Book a Call
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@ export default function Hero() {
           </div>
 
           {/* Right - Infinite Scrolling Images (2 columns) */}
-          <div className="hidden lg:flex gap-4 h-[600px] justify-end">
+          <div className="hidden lg:flex gap-4 h-full max-h-[calc(100vh-8rem)] justify-end">
             {/* Column 1 - Scrolls Up */}
             <div className="scroll-container w-64 xl:w-72 h-full">
               <div className="animate-scroll-up flex flex-col gap-4">
