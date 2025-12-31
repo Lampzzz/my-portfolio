@@ -2,13 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-const navLinks = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#contact", label: "Contact" },
-];
-
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,105 +15,159 @@ export default function Navigation() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-[var(--color-surface)]/90 backdrop-blur-md border-b border-[var(--color-border)]"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="container flex items-center justify-between h-20">
-        {/* Logo */}
-        <a
-          href="#"
-          className="font-serif text-xl font-semibold tracking-tight hover:text-[var(--color-accent)] transition-colors"
-        >
-          YN.
-        </a>
-
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors link-underline"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* CTA Button */}
-        <a
-          href="#contact"
-          className="hidden md:inline-flex btn btn-primary text-sm"
-        >
-          Let's Talk
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 -mr-2"
-          aria-label="Toggle menu"
-        >
-          <div className="w-6 h-5 flex flex-col justify-between">
-            <span
-              className={`h-0.5 w-full bg-[var(--color-text)] transition-transform duration-300 ${
-                isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            />
-            <span
-              className={`h-0.5 w-full bg-[var(--color-text)] transition-opacity duration-300 ${
-                isMobileMenuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`h-0.5 w-full bg-[var(--color-text)] transition-transform duration-300 ${
-                isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            />
-          </div>
-        </button>
-      </nav>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-[var(--color-surface)] border-b border-[var(--color-border)] transition-all duration-300 ${
-          isMobileMenuOpen
-            ? "opacity-100 visible translate-y-0"
-            : "opacity-0 invisible -translate-y-4"
+    <header className="fixed top-0 left-0 right-0 z-50 py-4">
+      <nav
+        className={`container max-w-5xl mx-auto transition-all duration-300 ${
+          isScrolled ? "" : ""
         }`}
       >
-        <ul className="container py-6 space-y-4">
-          {navLinks.map((link) => (
-            <li key={link.href}>
+        {/* Floating Pill Navbar */}
+        <div className="flex items-center justify-between bg-white rounded-full px-4 py-2 shadow-[0_2px_20px_rgba(0,0,0,0.08)] border border-[var(--color-border)]">
+          {/* Left: Profile Photo + Name */}
+          <a href="#" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <img
+              src="https://ui-avatars.com/api/?name=Your+Name&background=000&color=fff&size=128&bold=true"
+              alt="Your Name"
+              width={36}
+              height={36}
+              className="rounded-full"
+            />
+            <span className="font-semibold text-sm tracking-wide uppercase hidden sm:block">
+              Your Name
+            </span>
+          </a>
+
+          {/* Right: Social Icons + CTA */}
+          <div className="flex items-center gap-3">
+            {/* Social Icons */}
+            <div className="hidden sm:flex items-center gap-2">
               <a
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-lg font-medium text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+                href="#"
+                className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-[var(--color-bg-alt)] transition-colors"
+                aria-label="LinkedIn"
               >
-                {link.label}
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
               </a>
-            </li>
-          ))}
-          <li className="pt-4">
+              <a
+                href="#"
+                className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-[var(--color-bg-alt)] transition-colors"
+                aria-label="GitHub"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+            </div>
+
+            {/* CTA Button */}
             <a
               href="#contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="btn btn-primary w-full"
+              className="btn btn-primary text-sm py-2 px-4"
             >
-              Let's Talk
+              <span className="hidden sm:inline">Work with Me</span>
+              <span className="sm:hidden">Contact</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
             </a>
-          </li>
-        </ul>
-      </div>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 -mr-2"
+              aria-label="Toggle menu"
+            >
+              <div className="w-5 h-4 flex flex-col justify-between">
+                <span
+                  className={`h-0.5 w-full bg-[var(--color-text)] transition-transform duration-300 ${
+                    isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+                  }`}
+                />
+                <span
+                  className={`h-0.5 w-full bg-[var(--color-text)] transition-opacity duration-300 ${
+                    isMobileMenuOpen ? "opacity-0" : ""
+                  }`}
+                />
+                <span
+                  className={`h-0.5 w-full bg-[var(--color-text)] transition-transform duration-300 ${
+                    isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden mt-2 bg-white rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.08)] border border-[var(--color-border)] overflow-hidden transition-all duration-300 ${
+            isMobileMenuOpen
+              ? "opacity-100 visible max-h-96"
+              : "opacity-0 invisible max-h-0"
+          }`}
+        >
+          <ul className="p-4 space-y-2">
+            <li>
+              <a
+                href="#work"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2 px-3 text-sm font-medium uppercase tracking-wide rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors"
+              >
+                Case Studies
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2 px-3 text-sm font-medium uppercase tracking-wide rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#testimonials"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2 px-3 text-sm font-medium uppercase tracking-wide rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors"
+              >
+                Testimonials
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2 px-3 text-sm font-medium uppercase tracking-wide rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors"
+              >
+                Contact
+              </a>
+            </li>
+            <li className="pt-2 flex gap-2">
+              <a
+                href="#"
+                className="flex-1 py-2 flex items-center justify-center gap-2 rounded-lg border border-[var(--color-border)] hover:bg-[var(--color-bg-alt)] transition-colors"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
+              </a>
+              <a
+                href="#"
+                className="flex-1 py-2 flex items-center justify-center gap-2 rounded-lg border border-[var(--color-border)] hover:bg-[var(--color-bg-alt)] transition-colors"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
   );
 }
-
