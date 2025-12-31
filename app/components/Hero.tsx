@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="container-hero relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left Content */}
-          <div className="max-w-xl mx-auto lg:mx-0">
+          <div className="max-w-2xl mx-auto lg:mx-0 lg:max-w-none">
             {/* Status Badge */}
             <div className="animate-on-load animate-fade-in-up mb-8">
               <span className="status-available">
@@ -63,9 +63,9 @@ export default function Hero() {
           </div>
 
           {/* Right - Infinite Scrolling Images (2 columns) */}
-          <div className="hidden lg:flex gap-4 h-[600px] justify-center">
+          <div className="hidden lg:flex gap-4 h-[600px] justify-end">
             {/* Column 1 - Scrolls Up */}
-            <div className="scroll-container w-72 h-full">
+            <div className="scroll-container w-64 xl:w-72 h-full">
               <div className="animate-scroll-up flex flex-col gap-4">
                 {[...scrollImages[0], ...scrollImages[0]].map((src, i) => (
                   <div
@@ -83,7 +83,7 @@ export default function Hero() {
             </div>
 
             {/* Column 2 - Scrolls Down */}
-            <div className="scroll-container w-72 h-full">
+            <div className="scroll-container w-64 xl:w-72 h-full">
               <div className="animate-scroll-down flex flex-col gap-4">
                 {[...scrollImages[1], ...scrollImages[1]].map((src, i) => (
                   <div
