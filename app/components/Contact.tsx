@@ -6,8 +6,6 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    project: "",
-    budget: "",
     message: "",
   });
 
@@ -19,7 +17,7 @@ export default function Contact() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({
       ...formData,
@@ -107,31 +105,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[var(--color-bg-alt)] flex items-center justify-center shrink-0">
-                  <svg
-                    className="w-5 h-5 text-[var(--color-text-muted)]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-sm text-[var(--color-text-subtle)] mb-1">
-                    Response Time
-                  </div>
-                  <span className="text-[var(--color-text)]">
-                    Within 24-48 hours
-                  </span>
-                </div>
-              </div>
             </div>
 
             {/* Testimonial Highlight */}
@@ -195,52 +168,6 @@ export default function Contact() {
                   placeholder="john@example.com"
                   required
                 />
-              </div>
-
-              {/* Project Type */}
-              <div>
-                <label
-                  htmlFor="project"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Project Type
-                </label>
-                <select
-                  id="project"
-                  name="project"
-                  value={formData.project}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select a project type</option>
-                  <option value="web-design">Web Design</option>
-                  <option value="web-development">Web Development</option>
-                  <option value="branding">Branding</option>
-                  <option value="mobile-app">Mobile App</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              {/* Budget */}
-              <div>
-                <label
-                  htmlFor="budget"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Budget Range
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                >
-                  <option value="">Select a budget range</option>
-                  <option value="5k-10k">$5,000 - $10,000</option>
-                  <option value="10k-25k">$10,000 - $25,000</option>
-                  <option value="25k-50k">$25,000 - $50,000</option>
-                  <option value="50k+">$50,000+</option>
-                </select>
               </div>
 
               {/* Message */}
