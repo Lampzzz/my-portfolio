@@ -130,7 +130,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column - Form */}
-          <div className="lg:col-span-5 bg-white rounded-2xl p-8 md:p-10 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.06)]">
+          <div className="lg:col-span-5 self-start bg-white rounded-2xl p-6 md:p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.06)]">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
