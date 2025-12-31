@@ -279,7 +279,7 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                {/* Achievements */}
+                {/* Achievements - Hidden for now
                 <div className="space-y-4 mb-8">
                   {project.achievements.map((achievement, i) => (
                     <div key={i} className="flex items-center gap-3">
@@ -305,6 +305,7 @@ export default function Projects() {
                     </div>
                   ))}
                 </div>
+                */}
 
                 {/* Tech Stack with Icons */}
                 <div className="flex flex-wrap gap-2 mb-8">
