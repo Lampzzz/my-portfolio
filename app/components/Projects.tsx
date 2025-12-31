@@ -221,6 +221,13 @@ export default function Projects() {
                 className={`relative ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
               >
                 <div className="project-image-tilt relative bg-[var(--color-bg)] rounded-2xl p-6 shadow-lg">
+                  {/* Project Logo/Icon - Overlapping the image */}
+                  <div
+                    className="absolute -top-5 -left-5 z-10 w-16 h-16 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-xl border-4 border-white"
+                    style={{ backgroundColor: project.color }}
+                  >
+                    {project.title.charAt(0)}
+                  </div>
                   {/* Main Image */}
                   <div className="rounded-xl overflow-hidden shadow-md">
                     <img
@@ -259,14 +266,6 @@ export default function Projects() {
 
               {/* Content */}
               <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
-                {/* Project Logo/Icon placeholder */}
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-white font-bold text-xl shadow-lg"
-                  style={{ backgroundColor: project.color }}
-                >
-                  {project.title.charAt(0)}
-                </div>
-
                 {/* Title */}
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">
                   {project.title}
