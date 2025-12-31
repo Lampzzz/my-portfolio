@@ -13,22 +13,15 @@ const scrollImages = [
     "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&h=280&fit=crop&q=80",
     "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=250&fit=crop&q=80",
   ],
-  // Column 3 images
-  [
-    "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=250&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=270&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1618788372246-79faff0c3742?w=400&h=240&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&h=260&fit=crop&q=80",
-  ],
 ];
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden">
-      <div className="container relative">
+    <section className="min-h-screen flex items-center pt-32 pb-16 relative overflow-hidden">
+      <div className="container-hero relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left Content */}
-          <div className="max-w-xl">
+          <div className="max-w-xl mx-auto lg:mx-0">
             {/* Status Badge */}
             <div className="animate-on-load animate-fade-in-up mb-8">
               <span className="status-available">
@@ -107,11 +100,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right - Infinite Scrolling Images (Landscape) */}
-          <div className="hidden lg:flex gap-3 h-[600px] justify-end">
+          {/* Right - Infinite Scrolling Images (2 columns) */}
+          <div className="hidden lg:flex gap-4 h-[600px] justify-center">
             {/* Column 1 - Scrolls Up */}
-            <div className="scroll-container w-56 h-full">
-              <div className="animate-scroll-up flex flex-col gap-3">
+            <div className="scroll-container w-72 h-full">
+              <div className="animate-scroll-up flex flex-col gap-4">
                 {[...scrollImages[0], ...scrollImages[0]].map((src, i) => (
                   <div
                     key={i}
@@ -128,27 +121,9 @@ export default function Hero() {
             </div>
 
             {/* Column 2 - Scrolls Down */}
-            <div className="scroll-container w-56 h-full">
-              <div className="animate-scroll-down flex flex-col gap-3">
+            <div className="scroll-container w-72 h-full">
+              <div className="animate-scroll-down flex flex-col gap-4">
                 {[...scrollImages[1], ...scrollImages[1]].map((src, i) => (
-                  <div
-                    key={i}
-                    className="w-full slider-card"
-                  >
-                    <img
-                      src={src}
-                      alt={`Web project ${i + 1}`}
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Column 3 - Scrolls Up (offset) */}
-            <div className="scroll-container w-56 h-full">
-              <div className="animate-scroll-up flex flex-col gap-3" style={{ animationDelay: '-8s' }}>
-                {[...scrollImages[2], ...scrollImages[2]].map((src, i) => (
                   <div
                     key={i}
                     className="w-full slider-card"
